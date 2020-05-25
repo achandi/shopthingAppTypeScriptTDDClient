@@ -24,7 +24,7 @@ class App extends React.Component<AppProps, AppState> {
     this.setState({ userInput: valueCheck });
   };
 
-  async onSearch(): Promise<void> {
+  onSearch = async (): Promise<void> => {
     try {
       const getInput = await axios.get(
         `/calculation?input=${this.state.userInput}`
@@ -35,7 +35,7 @@ class App extends React.Component<AppProps, AppState> {
     } catch (error) {
       this.setState({ error });
     }
-  }
+  };
 
   render() {
     return (
